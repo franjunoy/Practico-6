@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1574459752 source:c:\users\santi\desktop\fran c\practico 6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbolbinarios.h"
+
+1574459702 c:\users\santi\desktop\fran c\practico 6\arbolbinarios.h
+
