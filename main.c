@@ -136,3 +136,56 @@ void listar(arbol *A)
         listar(A->h_izq);
     }
 }
+int main()
+{
+    arbol *raiz;
+    raiz = NULL;
+    char aux[50], aux2[50], aux3[50];
+    int res, opcion;
+    do
+    {
+        printf("Menu\n");
+        printf("1- Agregar una cadena al arbol \n");
+        printf("2- Buscar si existe \n");
+        printf("3- Eliminar un elemento\n");
+        printf("4- Mostrar cadenas ingresadas en el arbol\n");
+        scanf("%d", &opcion);
+        switch (opcion)
+        {
+        case 1:
+            printf("Ingrese una cadena\n ");
+            fflush(stdin);
+            fgets(aux, 50, stdin);
+            cambio(aux);
+            inserta(&raiz, aux);
+            break;
+        case 2:
+            printf("Ingrese cadena a buscar\n ");
+            fflush(stdin);
+            fgets(aux2, 50, stdin);
+            cambio(aux2);
+            res = es_miembro(raiz, aux2);
+            if (res == 1)
+            {
+                printf("El  elemento  buscado  existe  en el arbol\n");
+            }
+            else
+            {
+                printf("No  existe \n");
+            }
+            break;
+        case 3:
+            printf("Ingrese cadena a eliminar\n");
+            fflush(stdin);
+            fgets(aux3, 50, stdin);
+            cambio(aux3);
+            suprime(&raiz, aux3);
+            break;
+        case 4:
+            printf("Lista de cadenas ingresadas:\n");
+            listar(raiz);
+            break;
+        }
+    } while (opcion != 0);
+    return 0;
+}
